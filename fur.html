@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For the We that we created together</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('Donotopen!!!!/plsdontpls/image/first.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .fixed-text {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 500px;
+            margin: 40px auto;
+            aspect-ratio: 1/1;
+        }
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .active {
+            display: block;
+        }
+        .text-container {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: -40px;
+            color: white;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-text">
+        Going Down Memory Lane
+    </div>
+    <div class="slideshow-container">
+        <img class="slide active" src="Donotopen!!!!/plsdontpls/image/first1.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/1.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/2.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/3.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/4.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/5.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/6.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/7.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/8.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/9.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/10.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/11.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/12.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/13.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/14.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/15.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/16.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/17.jpeg" alt="">
+        <img class="slide" src="Donotopen!!!!/plsdontpls/image/18.jpeg" alt="">
+    </div>
+    <div class="text-container" id="text-container">
+        <p>Memories are very precious more so with you.</p>
+    </div>
+    <div class="button-container" id="button-container">
+        <button onclick="changeSlide()">Next</button>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const textContainer = document.getElementById('text-container');
+        const buttonContainer = document.getElementById('button-container');
+        const texts = [
+            "",
+            "This started",
+            "with this cute girl",
+            "And this one heck of a guy dating",
+            "They fell in loved",
+            "Going out trying this new thing",
+            "Experiencing falling in love in slow motion",
+            "Making each moment count",
+            "Getting comfy stll makes you beautiful",
+            "Taking care of one another",
+            "Having each other's back",
+            "Just enjoying each other",
+            "Chowking for the win hehehe",
+            "Planning to kidnap this cutie here",
+            "A goddess has ascended!!",
+            "A Beautiful girl is next to me",
+            "I think its a success!!!",
+            "Going stronger every day",
+            ""
+        ];
+        function changeSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+            textContainer.innerHTML = `<p>${texts[currentIndex]}</p>`;
+            if (currentIndex === slides.length - 1) {
+                buttonContainer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
